@@ -1,0 +1,672 @@
+{
+  "name": "Komari Next Classic",
+  "short": "komari-next-classic",
+  "description": "Komari Next Classic custom theme with DStatus-style UI, status cards, node cards with CPU/memory/disk details, asset dashboard and expiry timeline",
+  "version": "2.0.0",
+  "author": "moxuna",
+  "url": "https://github.com/moxuna/komari-next-classic",
+  "preview": "preview.png",
+  "configuration": {
+    "name": "主题设置",
+    "icon": "Palette",
+    "managedFields": [
+      {
+        "key": "colorTheme",
+        "type": "option",
+        "label": "默认颜色主题",
+        "options": [
+          "default",
+          "ocean",
+          "sunset",
+          "forest",
+          "midnight",
+          "rose"
+        ],
+        "default": "default"
+      },
+      {
+        "key": "backgroundImageUrl",
+        "type": "text",
+        "label": "背景图片链接",
+        "default": ""
+      },
+      {
+        "key": "logoImageUrl",
+        "type": "text",
+        "label": "Logo 图片链接",
+        "default": ""
+      },
+      {
+        "key": "statusCardsVisibility.currentTime",
+        "type": "bool",
+        "label": "显示当前时间",
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.currentOnline",
+        "type": "bool",
+        "label": "显示当前在线",
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.regionOverview",
+        "type": "bool",
+        "label": "显示点亮地区",
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.trafficOverview",
+        "type": "bool",
+        "label": "显示流量概览",
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.networkSpeed",
+        "type": "bool",
+        "label": "显示网络速率",
+        "default": true
+      },
+      {
+        "key": "showMoodSystem",
+        "type": "bool",
+        "label": "显示心情系统",
+        "default": true
+      },
+      {
+        "key": "showLevelSystem",
+        "type": "bool",
+        "label": "显示等级系统",
+        "default": true
+      }
+    ],
+    "description": "Komari Next Classic 主题专属设置",
+    "fields": [
+      {
+        "type": "title",
+        "name": "主题设置"
+      },
+      {
+        "key": "colorTheme",
+        "type": "select",
+        "name": {
+          "zh-CN": "默认颜色主题",
+          "en-US": "Default Color Theme"
+        },
+        "help": {
+          "zh-CN": "设置主题默认颜色方案",
+          "en-US": "Set the default color scheme for the theme"
+        },
+        "default": "default",
+        "options": "default,ocean,sunset,forest,midnight,rose"
+      },
+      {
+        "key": "backgroundImageUrl",
+        "type": "string",
+        "name": {
+          "zh-CN": "背景图片链接",
+          "en-US": "Background Image URL"
+        },
+        "help": {
+          "zh-CN": "主题默认背景图片链接",
+          "en-US": "Default background image URL for the theme"
+        },
+        "default": ""
+      },
+      {
+        "key": "logoImageUrl",
+        "type": "string",
+        "name": {
+          "zh-CN": "Logo 图片链接",
+          "en-US": "Logo Image URL"
+        },
+        "help": {
+          "zh-CN": "主题默认 Logo 图片链接",
+          "en-US": "Default logo image URL for the theme"
+        },
+        "default": ""
+      },
+      {
+        "key": "showAssetCalculatorButton",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示资产计算器按钮",
+          "en-US": "Show Asset Calculator Button"
+        },
+        "help": {
+          "zh-CN": "控制导航栏中是否显示资产计算器按钮",
+          "en-US": "Control whether the asset calculator button is shown in the navbar"
+        },
+        "default": true
+      },
+      {
+        "type": "title",
+        "name": "状态卡显示"
+      },
+      {
+        "key": "statusCardsVisibility.currentTime",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示当前时间",
+          "en-US": "Show Current Time"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.currentOnline",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示当前在线",
+          "en-US": "Show Current Online"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.regionOverview",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示点亮地区",
+          "en-US": "Show Region Overview"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.trafficOverview",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示流量概览",
+          "en-US": "Show Traffic Overview"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.networkSpeed",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示网络速率",
+          "en-US": "Show Network Speed"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.assetOverview",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示资产统计",
+          "en-US": "Show Asset Overview"
+        },
+        "default": true
+      },
+      {
+        "type": "title",
+        "name": "心情与养成"
+      },
+      {
+        "key": "showMoodSystem",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示心情系统",
+          "en-US": "Show Mood System"
+        },
+        "help": {
+          "zh-CN": "在节点卡片上显示基于负载的心情表情",
+          "en-US": "Show mood emoji on node cards based on load average"
+        },
+        "default": true
+      },
+      {
+        "key": "showLevelSystem",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示等级系统",
+          "en-US": "Show Level System"
+        },
+        "help": {
+          "zh-CN": "在节点卡片上显示基于运行时间的等级",
+          "en-US": "Show level badge on node cards based on uptime"
+        },
+        "default": true
+      }
+    ],
+    "options": [
+      {
+        "type": "title",
+        "name": "主题设置"
+      },
+      {
+        "key": "colorTheme",
+        "type": "select",
+        "name": {
+          "zh-CN": "默认颜色主题",
+          "en-US": "Default Color Theme"
+        },
+        "help": {
+          "zh-CN": "设置主题默认颜色方案",
+          "en-US": "Set the default color scheme for the theme"
+        },
+        "default": "default",
+        "options": "default,ocean,sunset,forest,midnight,rose"
+      },
+      {
+        "key": "backgroundImageUrl",
+        "type": "string",
+        "name": {
+          "zh-CN": "背景图片链接",
+          "en-US": "Background Image URL"
+        },
+        "help": {
+          "zh-CN": "主题默认背景图片链接",
+          "en-US": "Default background image URL for the theme"
+        },
+        "default": ""
+      },
+      {
+        "key": "logoImageUrl",
+        "type": "string",
+        "name": {
+          "zh-CN": "Logo 图片链接",
+          "en-US": "Logo Image URL"
+        },
+        "help": {
+          "zh-CN": "主题默认 Logo 图片链接",
+          "en-US": "Default logo image URL for the theme"
+        },
+        "default": ""
+      },
+      {
+        "key": "showAssetCalculatorButton",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示资产计算器按钮",
+          "en-US": "Show Asset Calculator Button"
+        },
+        "help": {
+          "zh-CN": "控制导航栏中是否显示资产计算器按钮",
+          "en-US": "Control whether the asset calculator button is shown in the navbar"
+        },
+        "default": true
+      },
+      {
+        "type": "title",
+        "name": "状态卡显示"
+      },
+      {
+        "key": "statusCardsVisibility.currentTime",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示当前时间",
+          "en-US": "Show Current Time"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.currentOnline",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示当前在线",
+          "en-US": "Show Current Online"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.regionOverview",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示点亮地区",
+          "en-US": "Show Region Overview"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.trafficOverview",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示流量概览",
+          "en-US": "Show Traffic Overview"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.networkSpeed",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示网络速率",
+          "en-US": "Show Network Speed"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.assetOverview",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示资产统计",
+          "en-US": "Show Asset Overview"
+        },
+        "default": true
+      },
+      {
+        "type": "title",
+        "name": "心情与养成"
+      },
+      {
+        "key": "showMoodSystem",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示心情系统",
+          "en-US": "Show Mood System"
+        },
+        "help": {
+          "zh-CN": "在节点卡片上显示基于负载的心情表情",
+          "en-US": "Show mood emoji on node cards based on load average"
+        },
+        "default": true
+      },
+      {
+        "key": "showLevelSystem",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示等级系统",
+          "en-US": "Show Level System"
+        },
+        "help": {
+          "zh-CN": "在节点卡片上显示基于运行时间的等级",
+          "en-US": "Show level badge on node cards based on uptime"
+        },
+        "default": true
+      }
+    ],
+    "items": [
+      {
+        "type": "title",
+        "name": "主题设置"
+      },
+      {
+        "key": "colorTheme",
+        "type": "select",
+        "name": {
+          "zh-CN": "默认颜色主题",
+          "en-US": "Default Color Theme"
+        },
+        "help": {
+          "zh-CN": "设置主题默认颜色方案",
+          "en-US": "Set the default color scheme for the theme"
+        },
+        "default": "default",
+        "options": "default,ocean,sunset,forest,midnight,rose"
+      },
+      {
+        "key": "backgroundImageUrl",
+        "type": "string",
+        "name": {
+          "zh-CN": "背景图片链接",
+          "en-US": "Background Image URL"
+        },
+        "help": {
+          "zh-CN": "主题默认背景图片链接",
+          "en-US": "Default background image URL for the theme"
+        },
+        "default": ""
+      },
+      {
+        "key": "logoImageUrl",
+        "type": "string",
+        "name": {
+          "zh-CN": "Logo 图片链接",
+          "en-US": "Logo Image URL"
+        },
+        "help": {
+          "zh-CN": "主题默认 Logo 图片链接",
+          "en-US": "Default logo image URL for the theme"
+        },
+        "default": ""
+      },
+      {
+        "key": "showAssetCalculatorButton",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示资产计算器按钮",
+          "en-US": "Show Asset Calculator Button"
+        },
+        "help": {
+          "zh-CN": "控制导航栏中是否显示资产计算器按钮",
+          "en-US": "Control whether the asset calculator button is shown in the navbar"
+        },
+        "default": true
+      },
+      {
+        "type": "title",
+        "name": "状态卡显示"
+      },
+      {
+        "key": "statusCardsVisibility.currentTime",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示当前时间",
+          "en-US": "Show Current Time"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.currentOnline",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示当前在线",
+          "en-US": "Show Current Online"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.regionOverview",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示点亮地区",
+          "en-US": "Show Region Overview"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.trafficOverview",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示流量概览",
+          "en-US": "Show Traffic Overview"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.networkSpeed",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示网络速率",
+          "en-US": "Show Network Speed"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.assetOverview",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示资产统计",
+          "en-US": "Show Asset Overview"
+        },
+        "default": true
+      },
+      {
+        "type": "title",
+        "name": "心情与养成"
+      },
+      {
+        "key": "showMoodSystem",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示心情系统",
+          "en-US": "Show Mood System"
+        },
+        "help": {
+          "zh-CN": "全局开关：在节点卡片上显示基于负载的心情表情",
+          "en-US": "Global toggle: show mood emoji on node cards"
+        },
+        "default": true
+      },
+      {
+        "key": "showLevelSystem",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示等级系统",
+          "en-US": "Show Level System"
+        },
+        "help": {
+          "zh-CN": "全局开关：在节点卡片上显示基于运行时间的等级",
+          "en-US": "Global toggle: show level badge on node cards"
+        },
+        "default": true
+      }
+    ],
+    "data": [
+      {
+        "type": "title",
+        "name": "主题设置"
+      },
+      {
+        "key": "colorTheme",
+        "type": "select",
+        "name": {
+          "zh-CN": "默认颜色主题",
+          "en-US": "Default Color Theme"
+        },
+        "help": {
+          "zh-CN": "设置主题默认颜色方案",
+          "en-US": "Set the default color scheme for the theme"
+        },
+        "default": "default",
+        "options": "default,ocean,sunset,forest,midnight,rose"
+      },
+      {
+        "key": "backgroundImageUrl",
+        "type": "string",
+        "name": {
+          "zh-CN": "背景图片链接",
+          "en-US": "Background Image URL"
+        },
+        "help": {
+          "zh-CN": "主题默认背景图片链接",
+          "en-US": "Default background image URL for the theme"
+        },
+        "default": ""
+      },
+      {
+        "key": "logoImageUrl",
+        "type": "string",
+        "name": {
+          "zh-CN": "Logo 图片链接",
+          "en-US": "Logo Image URL"
+        },
+        "help": {
+          "zh-CN": "主题默认 Logo 图片链接",
+          "en-US": "Default logo image URL for the theme"
+        },
+        "default": ""
+      },
+      {
+        "key": "showAssetCalculatorButton",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示资产计算器按钮",
+          "en-US": "Show Asset Calculator Button"
+        },
+        "help": {
+          "zh-CN": "控制导航栏中是否显示资产计算器按钮",
+          "en-US": "Control whether the asset calculator button is shown in the navbar"
+        },
+        "default": true
+      },
+      {
+        "type": "title",
+        "name": "状态卡显示"
+      },
+      {
+        "key": "statusCardsVisibility.currentTime",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示当前时间",
+          "en-US": "Show Current Time"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.currentOnline",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示当前在线",
+          "en-US": "Show Current Online"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.regionOverview",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示点亮地区",
+          "en-US": "Show Region Overview"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.trafficOverview",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示流量概览",
+          "en-US": "Show Traffic Overview"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.networkSpeed",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示网络速率",
+          "en-US": "Show Network Speed"
+        },
+        "default": true
+      },
+      {
+        "key": "statusCardsVisibility.assetOverview",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示资产统计",
+          "en-US": "Show Asset Overview"
+        },
+        "default": true
+      },
+      {
+        "type": "title",
+        "name": "心情与养成"
+      },
+      {
+        "key": "showMoodSystem",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示心情系统",
+          "en-US": "Show Mood System"
+        },
+        "help": {
+          "zh-CN": "全局开关：在节点卡片上显示基于负载的心情表情",
+          "en-US": "Global toggle: show mood emoji on node cards"
+        },
+        "default": true
+      },
+      {
+        "key": "showLevelSystem",
+        "type": "switch",
+        "name": {
+          "zh-CN": "显示等级系统",
+          "en-US": "Show Level System"
+        },
+        "help": {
+          "zh-CN": "全局开关：在节点卡片上显示基于运行时间的等级",
+          "en-US": "Global toggle: show level badge on node cards"
+        },
+        "default": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+# Everything is committed with LF; shell/Python sources must never carry CRLF.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.ico binary
+*.sh text eol=lf
+*.py text eol=lf
