@@ -41,7 +41,9 @@ function formatBytesInt(bytes: number): string {
   const sizes = ['B','KB','MB','GB','TB','PB'];
   const i = Math.floor(Math.log(bytes) / Math.log(k));
   const v = bytes / Math.pow(k, i);
-  return `${Math.round(v)} ${sizes[i]}`;
+  // 最多两位小数并去掉末尾 0（1.5 TB / 1.49 TB）；≥100 取整以保持紧凑（900 GB）
+  const n = v >= 100 ? Math.round(v) : parseFloat(v.toFixed(2));
+  return `${n} ${sizes[i]}`;
 }
 
 function formatSpeed(bytes: number): string {

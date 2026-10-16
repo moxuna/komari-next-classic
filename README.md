@@ -1,12 +1,12 @@
 # Komari Next Classic
 
-A custom frontend theme for [Komari](https://komari-document.pages.dev/) — **v2.0.0**.
+A custom frontend theme for [Komari](https://komari-document.pages.dev/) — **v2.0.1**.
 
 Komari Next Classic is a reworked Komari dashboard theme. It ships **only the frontend
 theme**: no companion backend, no extra services, no probes. Upload the theme package to a
 stock Komari server and it works.
 
-- Theme manifest: `theme/komari-theme.json` — `name: Komari Next Classic`, `short: komari-next-classic`, `version: 2.0.0`
+- Theme manifest: `theme/komari-theme.json` — `name: Komari Next Classic`, `short: komari-next-classic`, `version: 2.0.1`
 - Stack: Next.js 16 (static export) · React 19 · TypeScript · Tailwind CSS 4 · Radix UI
 
 ![preview](./theme/preview.png)
@@ -19,6 +19,8 @@ stock Komari server and it works.
   nodes, region overview, traffic overview, network speed, asset overview
 - Node cards show the CPU model × core count, memory and disk usage (used/total), and one row
   per monitoring point with name + colour bar + latency / packet loss (up to three rows, then folded)
+- Monthly traffic (used / total) keeps up to two decimals (`1.5 TB`, `1.49 TB`) instead of
+  integer rounding
 - Group switcher and node search live in one slim toolbar line — no oversized search card
 
 **Instance detail page**
@@ -127,7 +129,7 @@ Komari Next Classic is a modified fork of **Komari Next Pro** by LIU
 
 Changes in this fork:
 
-- renamed to Komari Next Classic, theme version bumped to `2.0.0`
+- renamed to Komari Next Classic, theme version bumped to `2.0.1`
 - removed the optional `unlock-probe` backend, the stream-unlock panel and the IP-info panel
 - removed the companion-behind-a-reverse-proxy requirement: the theme now needs nothing but Komari
 - dropped the unreachable upstream code (admin panel module, unused UI primitives and helper

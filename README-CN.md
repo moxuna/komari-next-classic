@@ -1,11 +1,11 @@
 # Komari Next Classic
 
-[Komari](https://komari-document.pages.dev/) 自定义前端主题 —— **v2.0.0**。
+[Komari](https://komari-document.pages.dev/) 自定义前端主题 —— **v2.0.1**。
 
 Komari Next Classic 是在 Komari Next 系列基础上重做的看板主题，**只包含前端主题**：
 不需要配套后端、不需要额外服务、不需要探针。把主题包装到原版 Komari 上即可使用。
 
-- 主题清单：`theme/komari-theme.json` —— `name: Komari Next Classic`、`short: komari-next-classic`、`version: 2.0.0`
+- 主题清单：`theme/komari-theme.json` —— `name: Komari Next Classic`、`short: komari-next-classic`、`version: 2.0.1`
 - 技术栈：Next.js 16（静态导出）· React 19 · TypeScript · Tailwind CSS 4 · Radix UI
 
 ![预览](./theme/preview.png)
@@ -18,6 +18,7 @@ Komari Next Classic 是在 Komari Next 系列基础上重做的看板主题，**
   实时速率、资产概览
 - 节点卡片显示 CPU 型号 × 核数、内存与硬盘用量（已用/总量），并按监测点分行显示
   名称 + 色块 + 延迟 / 丢包（最多 3 行，超出折叠）
+- 「月度」流量行最多保留两位小数（`1.5 TB` / `1.49 TB`），不再取整
 - 分组切换与节点搜索合并成一行轻量工具栏，不再有占满屏幕的搜索大卡片
 
 **节点详情页**
@@ -124,7 +125,7 @@ Komari Next Classic 是 **Komari Next Pro**（作者 LIU，<https://github.com/f
 
 本分支的改动：
 
-- 更名为 Komari Next Classic，主题版本号提升到 `2.0.0`
+- 更名为 Komari Next Classic，主题版本号提升到 `2.0.1`
 - 移除可选的 `unlock-probe` 后端、流媒体解锁面板与 IP 信息面板
 - 不再需要「主题 + 反代后端」的组合，只需要原版 Komari
 - 清掉不可达的上游代码（后台 admin 模块、未被引用的 UI 基础件与辅助组件，约 50 个文件），
