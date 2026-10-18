@@ -1,7 +1,7 @@
 {
   "name": "komari-next-classic",
   "private": false,
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Komari Next Classic - a frontend-only custom theme for Komari",
   "license": "MIT",
   "type": "module",

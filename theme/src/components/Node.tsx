@@ -381,11 +381,6 @@ const Node = ({ basic, live, online }: NodeProps) => {
 
           {/* Latency（与原版同一位置：左列延迟；有监测点时按监测点分行显示） */}
           {visibility.latency ? <div className="ds-ping-mini">
-            <div className="ds-sr">
-              <Activity className="w-3.5 h-3.5 ds-c-blue" />
-              <span className="ds-sr-label">{t("nodeCard.latency", { defaultValue: "延迟" })}</span>
-              <span className="ds-sr-val">{pingBlocks.hasData ? formatLatencyMs(recentLatencyAvg) : "--"}</span>
-            </div>
             {pingBlocks.hasTasks ? (
               <div className="ds-ping-tasks" aria-label={t("nodeCard.ping_tasks_title", { defaultValue: "网络监测" })}>
                 {pingBlocks.rows.slice(0, 3).map((row) => (
@@ -409,7 +404,14 @@ const Node = ({ basic, live, online }: NodeProps) => {
                 ) : null}
               </div>
             ) : (
-              <PingBlocksStrip blocks={recentPingBlocks} mode="latency" />
+              <>
+                <div className="ds-sr">
+                  <Activity className="w-3.5 h-3.5 ds-c-blue" />
+                  <span className="ds-sr-label">{t("nodeCard.latency", { defaultValue: "延迟" })}</span>
+                  <span className="ds-sr-val">{pingBlocks.hasData ? formatLatencyMs(recentLatencyAvg) : "--"}</span>
+                </div>
+                <PingBlocksStrip blocks={recentPingBlocks} mode="latency" />
+              </>
             )}
           </div> : null}
 
@@ -453,11 +455,6 @@ const Node = ({ basic, live, online }: NodeProps) => {
 
           {/* Packet loss（与原版同一位置：右列丢包；有监测点时按监测点分行显示） */}
           {visibility.packetLoss ? <div className="ds-ping-mini">
-            <div className="ds-sr">
-              <Wifi className="w-3.5 h-3.5 ds-c-muted" />
-              <span className="ds-sr-label">{t("chart.lossRate", { defaultValue: "丢包" })}</span>
-              <span className="ds-sr-val">{pingBlocks.hasData ? formatPacketLoss(pingBlocks.avgLoss) : "--"}</span>
-            </div>
             {pingBlocks.hasTasks ? (
               <div className="ds-ping-tasks">
                 {pingBlocks.rows.slice(0, 3).map((row) => {
@@ -484,7 +481,14 @@ const Node = ({ basic, live, online }: NodeProps) => {
                 ) : null}
               </div>
             ) : (
-              <PingBlocksStrip blocks={recentPingBlocks} mode="loss" />
+              <>
+                <div className="ds-sr">
+                  <Wifi className="w-3.5 h-3.5 ds-c-muted" />
+                  <span className="ds-sr-label">{t("chart.lossRate", { defaultValue: "丢包" })}</span>
+                  <span className="ds-sr-val">{pingBlocks.hasData ? formatPacketLoss(pingBlocks.avgLoss) : "--"}</span>
+                </div>
+                <PingBlocksStrip blocks={recentPingBlocks} mode="loss" />
+              </>
             )}
           </div> : null}
 

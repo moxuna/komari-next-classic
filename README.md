@@ -1,12 +1,12 @@
 # Komari Next Classic
 
-A custom frontend theme for [Komari](https://komari-document.pages.dev/) — **v2.0.1**.
+A custom frontend theme for [Komari](https://komari-document.pages.dev/) — **v2.0.2**.
 
 Komari Next Classic is a reworked Komari dashboard theme. It ships **only the frontend
 theme**: no companion backend, no extra services, no probes. Upload the theme package to a
 stock Komari server and it works.
 
-- Theme manifest: `theme/komari-theme.json` — `name: Komari Next Classic`, `short: komari-next-classic`, `version: 2.0.1`
+- Theme manifest: `theme/komari-theme.json` — `name: Komari Next Classic`, `short: komari-next-classic`, `version: 2.0.2`
 - Stack: Next.js 16 (static export) · React 19 · TypeScript · Tailwind CSS 4 · Radix UI
 
 ![preview](./theme/preview.png)
@@ -143,6 +143,9 @@ Changes in this fork:
 - frontend fixes and cleanups on top of the upstream theme (6 more zero-reference files removed:
   `LoadChart.tsx`, `utils/index.ts` plus the 3 helper modules only it re-exported, `rpc2.ts.rej`;
   line endings normalised to LF)
+- v2.0.2: a node card with latency monitor points now shows only the per-monitor-point
+  rows; the aggregate latency / packet-loss row above them (a different number, averaged
+  front-end-side from mixed samples) is no longer rendered
 
 ## License
 

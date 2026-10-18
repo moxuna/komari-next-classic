@@ -2,7 +2,7 @@
   "name": "Komari Next Classic",
   "short": "komari-next-classic",
   "description": "Komari Next Classic custom theme with DStatus-style UI, status cards, node cards with CPU/memory/disk details, asset dashboard and expiry timeline",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "author": "moxuna",
   "url": "https://github.com/moxuna/komari-next-classic",
   "preview": "preview.png",

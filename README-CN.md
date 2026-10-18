@@ -1,11 +1,11 @@
 # Komari Next Classic
 
-[Komari](https://komari-document.pages.dev/) 自定义前端主题 —— **v2.0.1**。
+[Komari](https://komari-document.pages.dev/) 自定义前端主题 —— **v2.0.2**。
 
 Komari Next Classic 是在 Komari Next 系列基础上重做的看板主题，**只包含前端主题**：
 不需要配套后端、不需要额外服务、不需要探针。把主题包装到原版 Komari 上即可使用。
 
-- 主题清单：`theme/komari-theme.json` —— `name: Komari Next Classic`、`short: komari-next-classic`、`version: 2.0.1`
+- 主题清单：`theme/komari-theme.json` —— `name: Komari Next Classic`、`short: komari-next-classic`、`version: 2.0.2`
 - 技术栈：Next.js 16（静态导出）· React 19 · TypeScript · Tailwind CSS 4 · Radix UI
 
 ![预览](./theme/preview.png)
@@ -136,6 +136,8 @@ Komari Next Classic 是 **Komari Next Pro**（作者 LIU，<https://github.com/f
   详情页手机端图表尺寸等），预览图已换成当前界面的实拍
 - 在上游主题基础上做了前端修复与清理（另删掉 6 个零引用文件：`LoadChart.tsx`、`utils/index.ts`
   及其 3 个只被它转出的辅助模块、`rpc2.ts.rej`；全仓库行尾统一为 LF）
+- v2.0.2：有监测点的节点卡片只保留按监测点分行的延迟/丢包行，其上方的「汇总平均」行
+  （数据是前端自己混样算的另一套数值，与下方不一致）不再显示
 
 ## 许可证
 
